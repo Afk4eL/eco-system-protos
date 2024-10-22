@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "eco-system.contracts;ssov1"; 
+
+service Auth {
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+    rpc Login (LoginRequest) returns (LoginResponse);
+}
+
+message UserPersonalInfo {
+    string Firstname = 1;
+    string Surname = 2;
+    string Patronymic = 3;
+}
+
+message UserContactInfo {
+    string Email = 1;
+    string PhoneNumber = 2;
+}
+
+message UserSecurityInfo {
+    string Password = 1;
+    string CurIp = 2;
+}
+
+message RegisterRequest {
+    UserPersonalInfo personal = 1;
+    UserContactInfo contacts = 2;
+    UserSecurityInfo security = 3;
+}
+
+message RegisterResponse {
+    string UserGuid = 1;
+    string Token = 2;
+}
+
+message LoginRequest {
+    string Email = 1;
+    string Password = 2;
+    int32 ServiceId = 3;
+}
+
+message LoginResponse {
+    string Token = 1;
+}
