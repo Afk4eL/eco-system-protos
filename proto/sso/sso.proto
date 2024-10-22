@@ -9,14 +9,21 @@ service Auth {
     rpc Login (LoginRequest) returns (LoginResponse);
 }
 
-message RegisterRequest {
+message UserPersonalInfo {
     string Firstname = 1;
     string Surname = 2;
     string Patronymic = 3;
+}
 
-    string Email = 4;
-    string PhoneNumber = 5;
-    string Password = 6;
+message UserContactInfo {
+    string Email = 1;
+    string PhoneNumber = 2;
+    string Password = 3;
+}
+
+message RegisterRequest {
+    UserPersonalInfo personal = 1;
+    UserContactInfo contacts = 2;
 }
 
 message RegisterResponse {
