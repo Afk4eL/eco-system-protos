@@ -22,7 +22,6 @@ message UserContactInfo {
 
 message UserSecurityInfo {
     string Password = 1;
-    string CurIp = 2;
 }
 
 message RegisterRequest {
