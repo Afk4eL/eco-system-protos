@@ -38,7 +38,7 @@ message RegisterResponse {
 message LoginRequest {
     string Email = 1;
     string Password = 2;
-    int32 ServiceId = 3;
+    string ServiceId = 3;
 }
 
 message LoginResponse {

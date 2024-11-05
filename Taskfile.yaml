@@ -12,3 +12,11 @@ tasks:
       - git tag -a '{{.TAG}}' -m '{{.MSG}}'
       - git push -u origin master
       - git push origin --tags
+  
+  generate-tag:
+    aliases:
+      - tag
+    cmds:
+      - git tag -a '{{.TAG}}' -m '{{.MSG}}'
+      - git push -u origin master
+      - git push origin --tags
